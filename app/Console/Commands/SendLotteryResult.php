@@ -13,7 +13,7 @@ class SendLotteryResult extends Command
      *
      * @var string
      */
-    protected $signature = 'lottery:send {email*}';
+    protected $signature = 'lottery:send {lotteryType} {email*}';
 
     /**
      * The console command description.
@@ -46,11 +46,18 @@ class SendLotteryResult extends Command
     {
         $this->info('Run!');
 
+        $lotteryType = $this->argument('lotteryType');
         $emails = $this->argument('email');
-        $this->line($emails);
-    
-        $this->lottery->getTypes();
-        $this->lottery->get('dlt');
-        $this->lottery->getHistory('dlt');
+
+        $todayResult = $this->lottery->get($lotteryType);
+        if ($todayResult['error_code']) {
+            $this->error($todayResult['reason']);
+            return false;
+        }
+
+        $this->info('获取' . $todayResult['result']['lottery_name'] . $todayResult['result']['lottery_date'] . '开奖结果成功！');
+        
+        // 发个邮件
+        Mail::to($emails)->send(new \App\Mail\Lottery($todayResult));
     }
 }
