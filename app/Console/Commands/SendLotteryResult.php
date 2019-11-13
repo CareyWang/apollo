@@ -56,7 +56,7 @@ class SendLotteryResult extends Command
         }
 
         $this->info('获取' . $todayResult['result']['lottery_name'] . $todayResult['result']['lottery_date'] . '开奖结果成功！');
-        
+
         // 发个邮件
         Mail::to($emails)->send(new \App\Mail\Lottery($todayResult));
     }
