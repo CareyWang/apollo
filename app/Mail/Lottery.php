@@ -32,7 +32,7 @@ class Lottery extends Mailable
     public function build()
     {
         return $this->view('mails.lottery.today')
-            ->subject('今日献爱心战报')
+            ->subject(date('Y-m-d') . '献爱心战报')
             ->with([
                 'result' => $this->todayResult['result'],
             ]);
