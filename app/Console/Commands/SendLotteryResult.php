@@ -52,10 +52,11 @@ class SendLotteryResult extends Command
         $todayResult = $this->lottery->get($lotteryType);
         if ($todayResult['error_code']) {
             $this->error($todayResult['reason']);
+
             return false;
         }
 
-        $this->info('获取' . $todayResult['result']['lottery_name'] . $todayResult['result']['lottery_date'] . '开奖结果成功！');
+        $this->info('获取'.$todayResult['result']['lottery_name'].$todayResult['result']['lottery_date'].'开奖结果成功！');
 
         // 发个邮件
         Mail::to($emails)->send(new \App\Mail\Lottery($todayResult));
