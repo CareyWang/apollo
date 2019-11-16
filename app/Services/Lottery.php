@@ -1,16 +1,13 @@
 <?php
 
-
 namespace App\Services;
-
 
 use App\Helpers\UrlBuilder;
 
 /**
- * 基于『聚合数据』服务获取彩票开奖结果
+ * 基于『聚合数据』服务获取彩票开奖结果.
  *
  * Class Lottery
- * @package App\Services
  */
 class Lottery
 {
@@ -27,7 +24,7 @@ class Lottery
     }
 
     /**
-     * 获取特定彩种开奖结果
+     * 获取特定彩种开奖结果.
      *
      * @param string $lotteryId
      * @param string $lotteryNo
@@ -35,7 +32,7 @@ class Lottery
      */
     public function get(string $lotteryId, string $lotteryNo = ''): array
     {
-        $api = self::API_BASE_URL . self::QUERY_PATH;
+        $api = self::API_BASE_URL.self::QUERY_PATH;
         $params = [
             'key' => $this->key,
             'lottery_id' => $lotteryId,
@@ -50,7 +47,7 @@ class Lottery
     }
 
     /**
-     * 获取特定彩种历史开奖结果
+     * 获取特定彩种历史开奖结果.
      *
      * @param string $lotteryId
      * @param string $pageSize
@@ -59,7 +56,7 @@ class Lottery
      */
     public function getHistory(string $lotteryId, string $pageSize = '', string $page = ''): array
     {
-        $api = self::API_BASE_URL . self::GET_HISTORY_PATH;
+        $api = self::API_BASE_URL.self::GET_HISTORY_PATH;
         $params = [
             'key' => $this->key,
             'lottery_id' => $lotteryId,
@@ -75,12 +72,12 @@ class Lottery
     }
 
     /**
-     * 获取支持的彩种
+     * 获取支持的彩种.
      * @return array
      */
     public function getTypes(): array
     {
-        $api = self::API_BASE_URL . self::GET_TYPES_PATH;
+        $api = self::API_BASE_URL.self::GET_TYPES_PATH;
         $params = [
             'key' => $this->key,
         ];

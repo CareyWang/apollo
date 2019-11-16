@@ -62,7 +62,6 @@ class GetLotteryTypes extends Command
                     ]
                 );
             }
-
         } else {
             $this->error('接口响应错误');
         }
