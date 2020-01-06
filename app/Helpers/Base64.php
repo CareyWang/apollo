@@ -1,6 +1,6 @@
 <?php
 /**
- * base64 相关方法封装
+ * base64 相关方法封装.
  */
 
 namespace App\Helpers;
