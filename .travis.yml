@@ -5,13 +5,8 @@ language: php
 php:
   - '7.3'
 
-# 指定node_js版本
-node_js: 
-  - 10.18.0
-
 cache:
   directories:
-    - node_modules
     - vendor
 
 # 指定源码分支
@@ -29,7 +24,6 @@ before_install:
 # Start: Build Lifecycle
 install:
   - composer install --no-dev
-  - yarn install --no-bin-link
 
 # deploy:
 #   provider: script
