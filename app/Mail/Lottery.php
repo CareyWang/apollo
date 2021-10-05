@@ -17,7 +17,8 @@ class Lottery extends Mailable
      * Create a new message instance.
      *
      * Lottery constructor.
-     * @param array $todayResult
+     *
+     * @param  array  $todayResult
      */
     public function __construct(array $todayResult)
     {
