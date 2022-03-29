@@ -10,7 +10,7 @@ class Base64
     /**
      * url safe base64 encode.
      *
-     * @param string $url
+     * @param  string  $url
      * @return string
      */
     public static function urlsafeEncode(string $url): string
@@ -21,7 +21,7 @@ class Base64
     /**
      * url safe base64 decode.
      *
-     * @param string $url
+     * @param  string  $url
      * @return string
      */
     public function urlsafeDecode(string $url): string
