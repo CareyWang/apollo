@@ -26,8 +26,8 @@ class Lottery
     /**
      * 获取特定彩种开奖结果.
      *
-     * @param string $lotteryId
-     * @param string $lotteryNo
+     * @param  string  $lotteryId
+     * @param  string  $lotteryNo
      * @return array
      */
     public function get(string $lotteryId, string $lotteryNo = ''): array
@@ -49,9 +49,9 @@ class Lottery
     /**
      * 获取特定彩种历史开奖结果.
      *
-     * @param string $lotteryId
-     * @param string $pageSize
-     * @param string $page
+     * @param  string  $lotteryId
+     * @param  string  $pageSize
+     * @param  string  $page
      * @return array
      */
     public function getHistory(string $lotteryId, string $pageSize = '', string $page = ''): array
@@ -73,6 +73,7 @@ class Lottery
 
     /**
      * 获取支持的彩种.
+     *
      * @return array
      */
     public function getTypes(): array
