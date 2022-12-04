@@ -28,7 +28,7 @@ class SendLotteryResult extends Command
      * Create a new command instance.
      * SendLotteryResult constructor.
      *
-     * @param Lottery $lottery
+     * @param  Lottery  $lottery
      */
     public function __construct(Lottery $lottery)
     {
